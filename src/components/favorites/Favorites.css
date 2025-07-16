@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.favorite-btn-filled {
+  padding: 0.5rem;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.favorite-btn.active {
+  background: rgba(255, 255, 255, 0.9);
+}

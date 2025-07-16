@@ -1,0 +1,142 @@
+.modern-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #f0f0f0;
+  width: 100%;
+  max-width: 320px;
+}
+
+.modern-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.modern-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.modern-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.modern-card:hover .modern-card-image {
+  transform: scale(1.05);
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.favorite-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.favorite-btn.active {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.modern-card-content {
+  padding: 16px;
+}
+
+.modern-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.modern-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0;
+  line-height: 1.3;
+  flex: 1;
+  margin-right: 8px;
+}
+
+.modern-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.modern-rating-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+}
+
+.modern-card-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.modern-card-location span {
+  font-size: 14px;
+  color: #717171;
+  font-weight: 400;
+}
+
+.modern-card-footer {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.modern-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.modern-night {
+  font-size: 14px;
+  color: #717171;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .modern-card {
+    max-width: 100%;
+  }
+
+  .modern-card-image-container {
+    height: 180px;
+  }
+
+  .modern-card-content {
+    padding: 12px;
+  }
+
+  .modern-card-title {
+    font-size: 15px;
+  }
+}

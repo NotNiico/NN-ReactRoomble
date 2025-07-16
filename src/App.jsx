@@ -1,12 +1,15 @@
+import React from 'react';
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 
 function App() {
   // Logica de la app
 
   return (
-    <> 
-      {/* // Lo que se renderiza en pantalla */}
-      <p>Hola desde Main</p>
+    <>
+      <Outlet /> 
     </>
   )
 }

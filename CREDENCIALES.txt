@@ -1,0 +1,6 @@
+userAdmin: admin
+password: admin123
+
+basicUser: nico
+password: nico123
+

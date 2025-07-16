@@ -1,0 +1,630 @@
+[
+  {
+    "id": 1,
+    "title": "Casa moderna con vista al mar",
+    "location": "Mar del Plata",
+    "pricePerNight": 120,
+    "description": "Hermosa casa moderna ubicada frente al mar en Mar del Plata. Disfruta de espectaculares amaneceres y atardeceres desde la comodidad de tu alojamiento. Perfecta para parejas o familias pequeñas que buscan relajarse junto al océano.",
+    "mainImage": "https://images.unsplash.com/photo-1715014212388-3de2fe8ac929?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Q2FzYSUyMG1vZGVybmElMjBjb24lMjB2aXN0YSUyMGFsJTIwbWFyfGVufDB8fDB8fHww",
+   "imagesInside": [
+      "https://plus.unsplash.com/premium_photo-1736194029221-c6b425576832?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGFiaXRhY2lvbiUyMG1vZGVybmElMjBjb24lMjB2aXN0YSUyMGFsJTIwbWFyfGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1680813078437-a18c7d631361?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29jaW5hY29uJTIwdmlzdGElMjBhbCUyMG1hcnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1657524398377-567034729507?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29tZWRvcnxlbnwwfHwwfHx8MA%3D%3D"
+    ],
+    "host": {
+      "name": "Lucía Fernández",
+      "avatar": "https://i.pravatar.cc/150?img=1",
+      "responseRate": "100%",
+      "responseTime": "1 hora"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Juan Pérez",
+        "comment": "Hermosa vista y muy limpia.",
+        "rating": 5,
+        "date": "2024-12-15"
+      },
+      {
+        "id": 2,
+        "user": "María Gómez",
+        "comment": "Excelente atención por parte de la host.",
+        "rating": 4,
+        "date": "2024-12-17"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Cocina",
+        "icon": "🍳"
+      },
+      {
+        "name": "Aire acondicionado",
+        "icon": "❄️"
+      },
+      {
+        "name": "Estacionamiento",
+        "icon": "🚗"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Cabaña rústica en el bosque",
+    "location": "Bariloche",
+    "pricePerNight": 95,
+    "description": "Cabaña rústica en el bosque, ideal para desconectar y disfrutar de la naturaleza. Cuenta con todas las comodidades necesarias para una estancia agradable. Perfecta para quienes buscan tranquilidad y contacto con la naturaleza en Bariloche.",
+    "mainImage": "https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imagesInside": [
+      "https://plus.unsplash.com/premium_photo-1685133855300-60d42d843c0a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpbWVuZWElMjBjYWJhJUMzJUIxYXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1605473203669-00e028079fc3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJhJUMzJUIxbyUyMGNhYmElQzMlQjFhfGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1686782502386-f3f3114ed9b4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGFiaXRhY2lvbmNhYmElQzMlQjFhfGVufDB8fDB8fHww"
+    ],
+    "host": {
+      "name": "Martín Gómez",
+      "avatar": "https://i.pravatar.cc/150?img=2",
+      "responseRate": "98%",
+      "responseTime": "2 horas"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Clara Díaz",
+        "comment": "Lugar acogedor, ideal para descansar.",
+        "rating": 5,
+        "date": "2025-01-05"
+      },
+      {
+        "id": 2,
+        "user": "Luis Herrera",
+        "comment": "Muy cálido y tranquilo, volvería sin dudar.",
+        "rating": 4,
+        "date": "2025-01-07"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "Calefacción",
+        "icon": "🔥"
+      },
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Estufa a leña",
+        "icon": "🪵"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Departamento moderno en el centro",
+    "location": "Buenos Aires",
+    "pricePerNight": 85,
+    "description": "Moderno departamento ubicado en el corazón de Buenos Aires. Perfecto para explorar la ciudad, con fácil acceso a transporte público, restaurantes y atracciones turísticas. Ideal para viajeros de negocios o turistas que quieren estar en el centro de la acción.",
+    "mainImage": "https://images.unsplash.com/photo-1624204386084-dd8c05e32226?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8RGVwYXJ0YW1lbnRvJTIwbW9kZXJub3xlbnwwfHwwfHx8MA%3D%3D",
+    "imagesInside": [
+      "https://plus.unsplash.com/premium_photo-1674676471417-07f613528a94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RGVwYXJ0YW1lbnRvJTIwbW9kZXJub3xlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8RGVwYXJ0YW1lbnRvJTIwbW9kZXJub3xlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1638454668466-e8dbd5462f20?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fERlcGFydGFtZW50byUyMG1vZGVybm98ZW58MHx8MHx8fDA%3D"
+    ],
+    "host": {
+      "name": "Camila Duarte",
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "responseRate": "97%",
+      "responseTime": "30 minutos"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Ana Torres",
+        "comment": "Muy bien ubicado y equipado.",
+        "rating": 5,
+        "date": "2025-02-10"
+      },
+      {
+        "id": 2,
+        "user": "Gabriel Méndez",
+        "comment": "Perfecto para una escapada urbana.",
+        "rating": 4,
+        "date": "2025-02-11"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Ascensor",
+        "icon": "🛗"
+      },
+      {
+        "name": "TV",
+        "icon": "📺"
+      },
+      {
+        "name": "Lavarropas",
+        "icon": "🧺"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Chalet familiar con jardín",
+    "location": "Tandil",
+    "pricePerNight": 110,
+    "description": "Amplio chalet familiar con hermoso jardín en Tandil. Perfecto para familias con niños o grupos de amigos. Cuenta con espacios amplios tanto interiores como exteriores, ideal para disfrutar de asados y actividades al aire libre.",
+    "mainImage": "https://plus.unsplash.com/premium_photo-1687996107450-1cb812e04e2e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Q2hhbGV0fGVufDB8fDB8fHww",
+    "imagesInside": [
+      "https://images.unsplash.com/photo-1737527952538-ac2e174a7023?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2hhbGV0JTIwYmElQzMlQjFvfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1601760562234-9814eea6663a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q2hhbGV0JTIwY29jaW5hfGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1684348962314-64fa628992f0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hhbGV0fGVufDB8fDB8fHww"
+    ],
+    "host": {
+      "name": "Federico Salas",
+      "avatar": "https://i.pravatar.cc/150?img=4",
+      "responseRate": "95%",
+      "responseTime": "3 horas"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Valentina López",
+        "comment": "Ideal para venir en familia.",
+        "rating": 5,
+        "date": "2025-01-30"
+      },
+      {
+        "id": 2,
+        "user": "Carlos Rivas",
+        "comment": "Gran jardín para niños y mascotas.",
+        "rating": 4,
+        "date": "2025-02-01"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Parrilla",
+        "icon": "🔥"
+      },
+      {
+        "name": "Garage",
+        "icon": "🏠"
+      },
+      {
+        "name": "TV",
+        "icon": "📺"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Loft industrial con estilo",
+    "location": "Córdoba",
+    "pricePerNight": 100,
+    "description": "Moderno loft de estilo industrial en Córdoba. Espacios amplios y abiertos con decoración contemporánea. Perfecto para parejas o profesionales que aprecian el diseño moderno y buscan una experiencia única de alojamiento.",
+    "mainImage": "https://images.unsplash.com/photo-1523130511383-f665d4d5f2ce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHVtYm8lMjBueXxlbnwwfHwwfHx8MA%3D%3D",
+    "imagesInside": [
+      "https://plus.unsplash.com/premium_photo-1661881888792-80a1297a5b9e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TG9mdCUyMGluZHVzdHJpYWx8ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1661876234761-1411931ba2c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8TG9mdCUyMGluZHVzdHJpYWx8ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1661963579906-f146cde83bf4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8TG9mdCUyMGluZHVzdHJpYWx8ZW58MHx8MHx8fDA%3D"
+    ],
+    "host": {
+      "name": "Sofía Ruiz",
+      "avatar": "https://i.pravatar.cc/150?img=5",
+      "responseRate": "99%",
+      "responseTime": "45 minutos"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Pedro Núñez",
+        "comment": "Muy estético y limpio.",
+        "rating": 5,
+        "date": "2025-03-12"
+      },
+      {
+        "id": 2,
+        "user": "Andrea Silva",
+        "comment": "Decoración impecable, muy recomendable.",
+        "rating": 5,
+        "date": "2025-03-14"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Cocina",
+        "icon": "🍳"
+      },
+      {
+        "name": "TV Smart",
+        "icon": "📱"
+      },
+      {
+        "name": "Aire acondicionado",
+        "icon": "❄️"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Domo ecológico en la sierra",
+    "location": "Villa General Belgrano",
+    "pricePerNight": 130,
+    "description": "Experiencia única en un domo ecológico ubicado en las sierras de Villa General Belgrano. Alojamiento sustentable con todas las comodidades, rodeado de naturaleza. Ideal para quienes buscan una experiencia diferente y amigable con el medio ambiente.",
+    "mainImage": "https://plus.unsplash.com/premium_photo-1732497753541-7830cba1e7c9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RG9tbyUyMGVjb2wlQzMlQjNnaWNvJTIwZW4lMjBsYSUyMHNpZXJyYXxlbnwwfHwwfHx8MA%3D%3D",
+    "imagesInside": [
+      "https://images.unsplash.com/photo-1705627174614-b6d4cde649f0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmElQzMlQjFvJTIwbmF0dXJhbHxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1736238846734-e087d077e4c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmElQzMlQjFvJTIwbmF0dXJhbGV6YXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1695554468837-35c3c3b1ee66?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvbW8lMjBlY29sb2dpY28lMjBlbiUyMGxhJTIwbW9udGElQzMlQjFhfGVufDB8fDB8fHww"
+    ],
+    "host": {
+      "name": "Alejandro Peña",
+      "avatar": "https://i.pravatar.cc/150?img=6",
+      "responseRate": "96%",
+      "responseTime": "1 hora"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Natalia Romero",
+        "comment": "Experiencia distinta y muy cómoda.",
+        "rating": 5,
+        "date": "2025-04-05"
+      },
+      {
+        "id": 2,
+        "user": "Hernán Figueroa",
+        "comment": "Ideal para desconectarse en la naturaleza.",
+        "rating": 4,
+        "date": "2025-04-06"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "Paneles solares",
+        "icon": "☀️"
+      },
+      {
+        "name": "Cocina ecológica",
+        "icon": "🌱"
+      },
+      {
+        "name": "Estacionamiento",
+        "icon": "🚗"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "PH con patio y parrilla",
+    "location": "La Plata",
+    "pricePerNight": 90,
+    "description": "Acogedor PH con amplio patio y parrilla en La Plata. Perfecto para grupos de amigos o familias que disfrutan de los asados y las reuniones al aire libre. Ubicado en una zona tranquila pero con fácil acceso al centro de la ciudad.",
+    "mainImage": "https://images.unsplash.com/photo-1669483549751-8e3e09db75e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNpdHklMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D",
+    "imagesInside": [
+      "https://images.unsplash.com/photo-1624018171446-c4f0b942cf87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2t5YXJkfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1613685703305-8592a8a6bfee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGxpdmluZ3Jvb218ZW58MHx8MHx8fDA%3D",
+      "https://via.placeholder.com/400x300?text=Dormitorio"
+    ],
+    "host": {
+      "name": "Marina López",
+      "avatar": "https://i.pravatar.cc/150?img=7",
+      "responseRate": "93%",
+      "responseTime": "2 horas"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Santiago Iglesias",
+        "comment": "Muy cómodo, el patio es un plus.",
+        "rating": 4,
+        "date": "2025-05-01"
+      },
+      {
+        "id": 2,
+        "user": "Julieta Domínguez",
+        "comment": "Ideal para hacer asados en familia.",
+        "rating": 5,
+        "date": "2025-05-02"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Parrilla",
+        "icon": "🔥"
+      },
+      {
+        "name": "Cocina completa",
+        "icon": "🍳"
+      },
+      {
+        "name": "TV",
+        "icon": "📺"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Mini departamento para parejas",
+    "location": "Mendoza",
+    "pricePerNight": 70,
+    "description": "Encantador mini departamento diseñado especialmente para parejas en Mendoza. Espacio íntimo y acogedor con todo lo necesario para una escapada romántica. Ubicación estratégica para explorar las bodegas y atractivos de la región.",
+    "mainImage": "https://plus.unsplash.com/premium_photo-1680281936362-aff258ecd143?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWRpZmljaW98ZW58MHx8MHx8fDA%3D",
+    "imagesInside": [
+      "https://via.placeholder.com/400x300?text=Living+Minimalista",
+      "https://via.placeholder.com/400x300?text=Baño+Moderno",
+      "https://via.placeholder.com/400x300?text=Kitchenette"
+    ],
+    "host": {
+      "name": "Bruno Álvarez",
+      "avatar": "https://i.pravatar.cc/150?img=8",
+      "responseRate": "100%",
+      "responseTime": "15 minutos"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Laura Paredes",
+        "comment": "Perfecto para escapadas románticas.",
+        "rating": 5,
+        "date": "2025-05-20"
+      },
+      {
+        "id": 2,
+        "user": "Nicolás Vera",
+        "comment": "Muy limpio y bien ubicado.",
+        "rating": 4,
+        "date": "2025-05-22"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Aire acondicionado",
+        "icon": "❄️"
+      },
+      {
+        "name": "TV",
+        "icon": "📺"
+      },
+      {
+        "name": "Microondas",
+        "icon": "📡"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Casa quinta con pileta",
+    "location": "Pilar",
+    "pricePerNight": 150,
+    "description": "Hermosa casa quinta con pileta y amplio parque en Pilar. Ideal para descansar y disfrutar en familia o con amigos durante los fines de semana. Perfecta para eventos especiales o simplemente para relajarse en un entorno natural y tranquilo.",
+    "mainImage": "https://media.istockphoto.com/id/184926250/photo/outdoor-pool.webp?a=1&b=1&s=612x612&w=0&k=20&c=W2BQaedtdyMiG8emFwvKrwEe7HJ6zjcJvQvDDd5F4kk=",
+    "imagesInside": [
+      "https://via.placeholder.com/400x300?text=Pileta",
+      "https://via.placeholder.com/400x300?text=Jardín+Grande",
+      "https://via.placeholder.com/400x300?text=Zona+Parrilla"
+    ],
+    "host": {
+      "name": "Carla Méndez",
+      "avatar": "https://i.pravatar.cc/150?img=9",
+      "responseRate": "98%",
+      "responseTime": "1 hora"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Milena Castro",
+        "comment": "Ideal para descansar un fin de semana.",
+        "rating": 5,
+        "date": "2025-06-10"
+      },
+      {
+        "id": 2,
+        "user": "Ezequiel Páez",
+        "comment": "La pileta y el parque son excelentes.",
+        "rating": 5,
+        "date": "2025-06-11"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "Pileta",
+        "icon": "🏊"
+      },
+      {
+        "name": "Parrilla",
+        "icon": "🔥"
+      },
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Estacionamiento privado",
+        "icon": "🅿️"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Estudio con vista a las sierras",
+    "location": "Salta",
+    "pricePerNight": 105,
+    "description": "Acogedor estudio con espectacular vista panorámica a las sierras de Salta. Perfecto para viajeros que buscan tranquilidad y quieren despertar cada día con vistas impresionantes. Ideal como base para explorar los paisajes y cultura del norte argentino.",
+    "mainImage": "https://media.istockphoto.com/id/858458210/photo/house-of-cinder-block-house-with-plastic-windows-and-roof-of-corrugated-sheet-roofing-of-metal.webp?a=1&b=1&s=612x612&w=0&k=20&c=L46PHfYP7iOFelkW0LnnpMgTSdoTM7DBhkOSjbQkt0k=",
+    "imagesInside": [
+      "https://via.placeholder.com/400x300?text=Vista+Sierras",
+      "https://via.placeholder.com/400x300?text=Interior+Estudio",
+      "https://via.placeholder.com/400x300?text=Balcón"
+    ],
+    "host": {
+      "name": "Julián Ortega",
+      "avatar": "https://i.pravatar.cc/150?img=10",
+      "responseRate": "95%",
+      "responseTime": "2 horas"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Melina Godoy",
+        "comment": "Vista impresionante desde el balcón.",
+        "rating": 5,
+        "date": "2025-06-25"
+      },
+      {
+        "id": 2,
+        "user": "Facundo Acosta",
+        "comment": "Todo impecable, volvería sin dudas.",
+        "rating": 5,
+        "date": "2025-06-27"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Cocina",
+        "icon": "🍳"
+      },
+      {
+        "name": "Aire acondicionado",
+        "icon": "❄️"
+      },
+      {
+        "name": "TV Smart",
+        "icon": "📱"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Casa colonial en el centro histórico",
+    "location": "San Miguel de Tucumán",
+    "pricePerNight": 85,
+    "description": "Hermosa casa colonial restaurada ubicada en pleno centro histórico de Tucumán. Combina la arquitectura tradicional con comodidades modernas. A pasos de museos, restaurantes y sitios de interés histórico. Perfecta para quienes buscan sumergirse en la rica historia del norte argentino.",
+    "mainImage": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    "imagesInside": [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+      "https://images.unsplash.com/photo-1571508601382-5b41b1e2a8b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+    ],
+    "host": {
+      "name": "Carmen Villalba",
+      "avatar": "https://i.pravatar.cc/150?img=11",
+      "responseRate": "98%",
+      "responseTime": "1 hora"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Roberto Mendez",
+        "comment": "La casa tiene un encanto especial, muy bien ubicada.",
+        "rating": 5,
+        "date": "2025-06-20"
+      },
+      {
+        "id": 2,
+        "user": "Lucia Herrera",
+        "comment": "Perfecta para conocer el centro histórico a pie.",
+        "rating": 4,
+        "date": "2025-06-23"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Cocina completa",
+        "icon": "🍳"
+      },
+      {
+        "name": "Patio interno",
+        "icon": "🌿"
+      },
+      {
+        "name": "Calefacción",
+        "icon": "🔥"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Departamento frente a Av.Libertador",
+    "location": "Bariloche",
+    "pricePerNight": 140,
+    "description": "Acogedora cabaña de madera ubicada en las montañas de Bariloche, rodeada de bosques de lengas y con acceso directo a senderos de trekking. Ideal para desconectarse de la rutina y disfrutar de la naturaleza patagónica. Incluye chimenea y deck con vista al lago.",
+    "mainImage": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    "imagesInside": [
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+      "https://images.unsplash.com/photo-1542718610-a1d656d1884c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+    ],
+    "host": {
+      "name": "Martín Espinoza",
+      "avatar": "https://i.pravatar.cc/150?img=12",
+      "responseRate": "92%",
+      "responseTime": "3 horas"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "user": "Ana Gutierrez",
+        "comment": "Muy bueno, recomendado para un viaje.",
+        "rating": 5,
+        "date": "2025-06-18"
+      },
+      {
+        "id": 2,
+        "user": "Diego Morales",
+        "comment": "La vista desde el deck es increíble, muy recomendable.",
+        "rating": 5,
+        "date": "2025-06-22"
+      }
+    ],
+    "amenities": [
+      {
+        "name": "WiFi",
+        "icon": "📶"
+      },
+      {
+        "name": "Chimenea",
+        "icon": "🔥"
+      },
+      {
+        "name": "Deck con vista",
+        "icon": "🏞️"
+      },
+      {
+        "name": "Parrilla",
+        "icon": "🍖"
+      }
+    ]
+  }
+]
