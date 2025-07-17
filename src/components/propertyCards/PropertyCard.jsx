@@ -5,8 +5,6 @@ import './PropertyCard.css';
 import '../../pages/Home.css';
 import { useAuth } from '../../context/AuthContext.jsx';
 import { useFavorites } from '../../context/FavoritesContext.jsx';
-import { addFavorite, fetchFavoritesByUser, deleteFavoriteById } from '../../api/FavoriteApi.js';
-
 
 
 const PropertyCard = ({ property }) => {
@@ -14,7 +12,6 @@ const PropertyCard = ({ property }) => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
-
 
   const handleClick = () => {
     navigate(`/property/${property.id}`);
