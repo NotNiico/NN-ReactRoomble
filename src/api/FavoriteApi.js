@@ -1,3 +1,4 @@
+
 export const addFavorite = async (property, userEmail) => {
   try {
     const response = await fetch("http://localhost:8787/roombleapi/favorites", {
@@ -6,14 +7,8 @@ export const addFavorite = async (property, userEmail) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user: userEmail,
-        favoriteData: {
-          propertyId: property.id,
-          title: property.title,
-          mainImage: property.mainImage,
-          location: property.location,
-          price: property.price,
-        },
+        userId: userEmail,            
+        propertyId: property.id       
       }),
     });
 

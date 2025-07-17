@@ -1,4 +1,3 @@
-// src/components/utils/modalManager/PropertyModalManager.jsx
 import React from "react";
 
 const ManagePropertyModal = ({ property, onClose, onDelete }) => {

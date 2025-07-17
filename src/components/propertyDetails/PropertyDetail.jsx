@@ -1,20 +1,21 @@
 import { useNavigate, useParams } from "react-router-dom";
+import toast from 'react-hot-toast';
 import { Heart, Star, MapPin, ArrowLeft, Edit, Trash2, Eye, Save, X } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 import properties from "../../data/properties.json";
 import './PropertyDetail.css';
 import Header from '../../pages/Header.jsx';
 import { useAuth } from "../../context/AuthContext.jsx";
-import { addFavorite, fetchFavoritesByUser, deleteFavoriteById } from "../utils/FavoriteManager.jsx";
 import ManagePropertyModal from "../utils/modalManager/PropertyModalManager.jsx";
 import { useFavorites } from '../../context/FavoritesContext.jsx';
+import { fetchPropertyById } from "../../api/PropertiesApi.js";
+import { createBooking } from "../../api/BookingApi.js";
+import { fetchFavoritesByUser } from "../../api/FavoriteApi.js";
 
 
 const PropertyDetail = () => {
     const { user } = useAuth();
-    const { id } = useParams();
-    const property = properties.find(p => p.id === parseInt(id));
-    const [favorites, setFavorites] = useState(false);
+    const [favorites, setFavorites] = useState([]);
     const [checkIn, setCheckIn] = useState('');
     const [checkOut, setCheckOut] = useState('');
     const [guests, setGuests] = useState(1);
@@ -24,15 +25,61 @@ const PropertyDetail = () => {
     const [showModal, setShowModal] = useState(false);
     const [selectedProperty, setSelectedProperty] = useState(null);
     const { isFavorite, addFavorite, removeFavorite } = useFavorites();
+    const { id } = useParams();
+    const [property, setProperty] = useState(null);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const loadProperty = async () => {
+            setLoading(true);
+            try {
+                const prop = await fetchPropertyById(id);
+                setProperty(prop);
+            } catch (error) {
+                console.error("Error cargando propiedad:", error);
+                setProperty(null);
+            }
+            setLoading(false);
+        };
 
+        if (id) loadProperty();
+    }, [id]);
+
+    useEffect(() => {
+        const loadFavorites = async () => {
+            if (!user?.email) {
+                setFavorites([]);
+                return;
+            }
+            try {
+                const favs = await fetchFavoritesByUser(user.email);
+                setFavorites(favs || []);
+            } catch (err) {
+                console.error(err);
+                setFavorites([]);
+            }
+        };
+
+        loadFavorites();
+    }, [user]);
+
+    if (loading) return <p>Cargando propiedad...</p>;
     if (!property) return <p>Propiedad no encontrada</p>;
 
     const handleReservation = async () => {
         if (!checkIn || !checkOut || new Date(checkOut) <= new Date(checkIn)) {
-            alert('Por favor seleccioná fechas válidas.');
+            toast.error('Por favor seleccioná fechas válidas.');
             return;
         }
+
+        if (!user?.email) {
+            toast.error("Debés estar logueado para hacer una reserva.");
+            return;
+        }
+
+        const totalDays = Math.ceil((new Date(checkOut) - new Date(checkIn)) / (1000 * 60 * 60 * 24));
+        const totalPrice = property.pricePerNight * totalDays + 15;
+
         const bookingData = {
             propertyId: property.id,
             propertyTitle: property.title,
@@ -41,78 +88,41 @@ const PropertyDetail = () => {
             checkOut,
             guests,
             pricePerNight: property.pricePerNight,
-            totalPrice:
-                property.pricePerNight *
-                Math.ceil(
-                    (new Date(checkOut) - new Date(checkIn)) / (1000 * 60 * 60 * 24)
-                ) + 15,
+            totalPrice,
             status: 'confirmada',
         };
 
         try {
-            const response = await fetch("http://localhost:8787/roombleapi/booking", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    user: user.email,
-                    bookingData: bookingData,
-                    price: bookingData.totalPrice,
-                }),
-            });
+            await createBooking(user.email, bookingData);
+            toast.success("Reserva guardada correctamente");
 
-            const result = await response.json();
+            // Limpiar el formulario después de una reserva exitosa
+            setCheckIn('');
+            setCheckOut('');
+            setGuests(1);
 
-            if (result.success) {
-                alert("Reserva guardada correctamente");
-            } else {
-                alert("Error al guardar la reserva");
-            }
         } catch (error) {
-            console.error("Error en la reserva:", error);
-            alert("Error al conectar con el servidor");
+            toast.error("Error al guardar la reserva");
         }
     };
 
-    const handleManageProperty = (property) => {
-        setSelectedProperty(property);
-        setShowModal(true);
-    };
 
-    const handleDeleteProperty = (propertyId) => {
-        const stored = JSON.parse(localStorage.getItem("properties")) || [];
-        const updated = stored.filter(p => p.id !== propertyId);
-        localStorage.setItem("properties", JSON.stringify(updated));
-
-        setShowModal(false);
-        alert("Propiedad eliminada correctamente.");
-    };
-
-    useEffect(() => {
-        const loadFavorites = async () => {
-            try {
-                const favs = await fetchFavoritesByUser(user.email); // debe devolver array
-                setFavorites(favs || []); // asegurarse que sea array
-            } catch (err) {
-                console.error(err);
-                setFavorites([]); // fallback seguro
-            }
-        };
-
-        if (user?.email) {
-            loadFavorites();
-        }
-    }, [user]);
 
     const handleFavoriteClick = (e) => {
         e.stopPropagation();
+
+        if (!user) {
+            alert("Debés iniciar sesión para agregar favoritos.");
+            return;
+        }
+
         if (isFavorite(property.id)) {
             removeFavorite(property.id);
         } else {
             addFavorite(property);
         }
     };
+
 
     const today = new Date().toISOString().split("T")[0];
 
@@ -132,8 +142,9 @@ const PropertyDetail = () => {
                         <Heart
                             size={18}
                             fill={isFavorite(property.id) ? '#ff385c' : 'transparent'}
-                            color={isFavorite(property.id) ? '#ff385c' : '#ffffff'}
+                            color={isFavorite(property.id) ? '#ff385c' : '#888888'} 
                         />
+
                     </button>
                 </div>
             </div>

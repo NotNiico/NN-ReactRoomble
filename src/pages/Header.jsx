@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, Menu, User, Globe, Home } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import toast from 'react-hot-toast';
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,11 +13,19 @@ const Header = () => {
   const { logout } = useAuth();
 
   const handleLogout = () => {
-    logout();              7
-    navigate('/');    
+  // Mostrar toast primero
+  toast.success('Sesión cerrada correctamente', {
+    duration: 2000,
+    position: 'top-right',
+  });
+  
+  // Ejecutar logout y navegación después de un pequeño delay
+  setTimeout(() => {
+    logout();
+    navigate('/');
     setIsMenuOpen(false);
-    alert('Se ha cerrado sesión correctamente');
-  };
+  }, 500); // 500ms de delay para que se vea el toast
+};
 
 
   return (
@@ -118,7 +128,7 @@ const Header = () => {
                       <>
                         <hr className="dropdown-divider" />
                         <button
-                          className="dropdown-item px-3 py-2 text-danger "
+                          className="dropdown-item px-3 py-2 text-danger"
                           onClick={handleLogout}
                         >
                           Cerrar sesión

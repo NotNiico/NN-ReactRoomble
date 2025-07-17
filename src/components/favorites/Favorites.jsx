@@ -2,58 +2,64 @@ import React, { useEffect, useState } from 'react';
 import { Calendar, Users, MapPin, Heart } from 'lucide-react';
 import Header from '../../pages/Header';
 import './Favorites.css';
-import properties from '../../data/properties.json';
-import { fetchFavoritesByUser, deleteFavoriteById } from '../utils/FavoriteManager.jsx';
+import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
 import { useFavorites } from '../../context/FavoritesContext.jsx';
+import { fetchFavoritesByUser, deleteFavoriteById } from '../../api/FavoriteApi.js';
 
 
 const FavoritesPage = ({ property }) => {
   const { user } = useAuth();
   const [favProperties, setFavProperties] = useState([]);
   const navigate = useNavigate();
-  const { isFavorite, addFavorite, removeFavorite } = useFavorites();
-console.log('Fetching favorites for:', user.email);
+  const [favorites, setFavorites] = useState([]);
+  console.log('Fetching favorites for:', user.email);
 
+
+  const loadFavorites = async () => {
+    if (!user?.email) return;
+
+    try {
+      const userFavorites = await fetchFavoritesByUser(user.email);
+      console.log("Favoritos del usuario:", userFavorites);
+      setFavorites(userFavorites);
+    } catch (error) {
+      console.error("Error al cargar favoritos:", error);
+      alert("Error al cargar favoritos");
+    }
+  };
 
   useEffect(() => {
-    const loadFavorites = async () => {
-      try {
-        const favs = await fetchFavoritesByUser(user.email);
-        console.log("Favoritos:", favs); // ✅ chequear aquí
-        setFavProperties(favs || []);
-      } catch (err) {
-        console.error(err);
-        setFavProperties([]);
-      }
-    };
-
-    if (user?.email) {
-      loadFavorites();
-    }
+    loadFavorites();
   }, [user]);
-
-  // const loadFavorites = async () => {
-  //   try {
-  //     const favs = await fetchFavoritesByUser(user.email);
-  //     setFavProperties(favs || []);
-  //   } catch (err) {
-  //     console.error(err);
-  //     setFavProperties([]);
-  //   }
-  // };
-
 
   const handleRemoveFavorite = async (id) => {
     const success = await deleteFavoriteById(id);
     if (success) {
-      alert('Favorito eliminado correctamente.');
+      toast.success('Favorito eliminado correctamente.', {
+        duration: 3000,
+        position: 'top-center',
+        style: {
+          background: '#10b981',
+          color: 'white',
+        },
+      });
       loadFavorites();
     } else {
-      alert('Error al eliminar favorito.');
+      toast.error('Error al eliminar favorito.', {
+        duration: 4000,
+        position: 'top-center',
+        style: {
+          background: '#ef4444',
+          color: 'white',
+        },
+      });
     }
   };
+
+
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -66,14 +72,14 @@ console.log('Fetching favorites for:', user.email);
             </div>
             <div className="flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-lg">
               <Calendar className="w-5 h-5 text-blue-600" />
-              <span className="text-blue-800 font-medium">{favProperties.length} favoritos</span>
+              <span className="text-blue-800 font-medium">{favorites.length} favoritos</span>
             </div>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-8">
-        {favProperties.length === 0 ? (
+        {favorites.length === 0 ? (
           <div className="text-center py-16">
             <div className="bg-white rounded-2xl shadow-sm p-12 max-w-md mx-auto">
               <Calendar className="w-16 h-16 text-gray-300 mx-auto mb-4" />
@@ -91,17 +97,17 @@ console.log('Fetching favorites for:', user.email);
         ) : (
 
           <div className="space-y-6">
-            {favProperties.map(({ id, favoriteData }) => {
-              const property = favoriteData;
+            {favorites.map(({ id, property }) => {
 
               if (!property) return null;
+              console.log(property)
 
               return (
                 <div key={id} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden">
                   <div className="md:flex">
                     <div
                       className="modern-card md:w-80 h-48 md:h-auto"
-                      onClick={() => navigate(`/property/${property.propertyId}`)}
+                      onClick={() => navigate(`/property/${property.id}`)} 
                       style={{ cursor: 'pointer' }}
                     >
                       <img

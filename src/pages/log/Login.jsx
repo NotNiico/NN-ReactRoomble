@@ -1,23 +1,47 @@
 import React, { useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 import { useAuth } from '../../context/AuthContext.jsx';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; 
+import './Login.css';
 
 const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [form, setForm] = useState({
+        email: '',
+        password: ''
+    });
 
-    const handleLogin = (e) => {
+    const [loginError, setLoginError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleLogin = async (e) => {
         e.preventDefault();
+        setLoginError(''); 
+        setIsLoading(true);
 
-        const isLoggedIn = login(username, password);
-        if (isLoggedIn) {
-            navigate('/');
-        } else {
-            alert('Credenciales inválidas, intente nuevamente');
+        try {
+            const success = await login(form.email, form.password);
+
+            if (success) {
+                navigate('/');
+            } else {
+                setLoginError("Correo o contraseña incorrectos");
+            }
+        } catch (error) {
+            setLoginError("Error al iniciar sesión. Intenta nuevamente.");
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm(prev => ({ ...prev, [name]: value }));
+
+        if (loginError) {
+            setLoginError('');
         }
     };
 
@@ -28,50 +52,50 @@ const Login = () => {
                     <h2>Bienvenido a Roomble</h2>
                     <p>Encuentra tu lugar favorito en cualquier lugar</p>
                 </div>
-                
+
                 <form onSubmit={handleLogin} className="login-form">
                     <div className="form-group">
-                        <label htmlFor="username">Usuario</label>
+                        <label htmlFor="email">Email</label>
                         <input
-                            id="username"
-                            type="text"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            id="email"
+                            name='email'
+                            type="email"
+                            value={form.email}
+                            onChange={handleChange}
                             required
                             className="form-control"
                         />
                     </div>
-                    
+
                     <div className="form-group">
                         <label htmlFor="password">Contraseña</label>
                         <input
                             id="password"
+                            name='password'
                             type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            value={form.password}
+                            onChange={handleChange}
                             required
-                            className="form-control"
+                            className={`form-control ${loginError ? 'error' : ''}`}
                         />
+                        {loginError && (
+                            <div className="error-message">
+                                {loginError}
+                            </div>
+                        )}
                     </div>
-                    
-                    <button type="submit" className="btn btn-primary login-btn">LOGIN</button>
-                    
+
+                    <button
+                        type="submit"
+                        className="btn btn-primary login-btn"
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Iniciando sesión...' : 'LOGIN'}
+                    </button>
+
                     <div className="login-footer">
-                        <a href="/forgot-password" className="forgot-password">Forgot Password?</a>
-                        <p className="signup-text">Don't have an account? <a href="/signup">Sign Up</a></p>
-                        
-                        {/* <div className="divider">
-                            <span>OR</span>
-                        </div> */}
-{/*                         
-                        <div className="social-login">
-                            <button type="button" className="btn btn-outline-secondary social-btn">
-                                <i className="fab fa-google"></i> Continue with Google
-                            </button>
-                            <button type="button" className="btn btn-outline-secondary social-btn">
-                                <i className="fab fa-facebook-f"></i> Continue with Facebook
-                            </button>
-                        </div> */}
+                        <a href="/forgot-password" className="forgot-password">Olvidaste la contraseña?</a>
+                        <p className="signup-text">No tienes cuenta? <a href="/signup">Registrate</a></p>
                     </div>
                 </form>
             </div>
