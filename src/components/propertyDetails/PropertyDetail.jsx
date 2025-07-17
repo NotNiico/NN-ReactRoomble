@@ -1,8 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import toast from 'react-hot-toast';
-import { Heart, Star, MapPin, ArrowLeft, Edit, Trash2, Eye, Save, X } from "lucide-react";
+import { Heart, Star, MapPin, ArrowLeft} from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
-import properties from "../../data/properties.json";
 import './PropertyDetail.css';
 import Header from '../../pages/Header.jsx';
 import { useAuth } from "../../context/AuthContext.jsx";
@@ -295,7 +294,7 @@ const PropertyDetail = () => {
                         </div>
 
                         {user.isAdmin ? (
-                            <button className="manage-button" onClick={() => handleManageProperty(property)}>
+                            <button className="manage-button" onClick={() => navigate('/admin')}>
                                 Gestionar Propiedad
                             </button>
                         ) : (

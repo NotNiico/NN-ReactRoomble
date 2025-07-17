@@ -10,6 +10,7 @@ import Home from "../pages/Home";
 import PropertyDetail from "../components/propertyDetails/PropertyDetail";
 import Bookings from "../components/bookings/Bookings";
 import Favorites from "../components/favorites/Favorites";
+import AdminRoute from "../components/AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -41,9 +42,9 @@ const router = createBrowserRouter([
       {
         path: 'admin',
         element: (
-          <ProtectedRoute>
+          <AdminRoute>
             <AdminPanel />
-          </ProtectedRoute>
+          </AdminRoute>
         ),
       },
       {

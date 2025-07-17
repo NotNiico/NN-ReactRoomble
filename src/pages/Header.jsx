@@ -13,19 +13,17 @@ const Header = () => {
   const { logout } = useAuth();
 
   const handleLogout = () => {
-  // Mostrar toast primero
-  toast.success('Sesión cerrada correctamente', {
-    duration: 2000,
-    position: 'top-right',
-  });
-  
-  // Ejecutar logout y navegación después de un pequeño delay
-  setTimeout(() => {
-    logout();
-    navigate('/');
-    setIsMenuOpen(false);
-  }, 500); // 500ms de delay para que se vea el toast
-};
+    toast.success('Sesión cerrada correctamente', {
+      duration: 2000,
+      position: 'top-right',
+    });
+
+    setTimeout(() => {
+      logout();
+      navigate('/');
+      setIsMenuOpen(false);
+    }, 500);
+  };
 
 
   return (

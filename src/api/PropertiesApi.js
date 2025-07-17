@@ -21,7 +21,6 @@ export const fetchPropertyById = async (id) => {
       throw new Error(`Error al obtener propiedad: ${response.statusText}`);
     }
     const data = await response.json();
-    // Suponiendo que la API devuelve { success: true, property: {...} }
     return data.property || null;
   } catch (error) {
     console.error("fetchPropertyById error:", error);
@@ -29,7 +28,65 @@ export const fetchPropertyById = async (id) => {
   }
 };
 
-// Si querés, podés agregar funciones para crear, actualizar, eliminar propiedades
-// export const createProperty = async (propertyData) => { ... }
-// export const updateProperty = async (id, updatedData) => { ... }
-// export const deleteProperty = async (id) => { ... }
+export const createProperty = async (propertyData) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/property`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(propertyData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error al crear propiedad: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.property;
+  } catch (error) {
+    console.error("createProperty error:", error);
+    return null;
+  }
+};
+
+export const updateProperty = async (id, updatedData) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/property/edit/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error al actualizar propiedad: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.property;
+  } catch (error) {
+    console.error("updateProperty error:", error);
+    return null;
+  }
+};
+
+export const deleteProperty = async (id) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/property/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error al eliminar propiedad: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("deleteProperty error:", error);
+    return null;
+  }
+};
+

@@ -1,16 +1,22 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext.jsx'
+import { useAuth } from '../context/AuthContext';
 
-const AdminRoute = (children) => {
+const AdminRoute = ({ children }) => {
+  const { user, isAuthenticated } = useAuth();
 
-    const { user } = useAuth();
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
+  }
 
-    if (!user || !user.isAdmin ) {
-        return <Navigate to ="/login" replace />;
-    }
+  // Cambiá esto según cómo definas si es admin
+  const isAdmin = user?.isAdmin;
 
-  return children; // Si hay usuario autenticado y es admin, renderiza los hijos (la ruta protegida)
+  if (!isAdmin) {
+    return <Navigate to="/" />;
+  }
+
+  return children;
 };
 
 export default AdminRoute;

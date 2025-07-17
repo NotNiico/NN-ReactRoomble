@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Star, Heart, MapPin } from 'lucide-react';
 import './PropertyCard.css';
 import '../../pages/Home.css';
-import { useAuth } from '../../context/AuthContext.jsx';
 import { useFavorites } from '../../context/FavoritesContext.jsx';
 
 
 const PropertyCard = ({ property }) => {
-  const [favorites, setFavorites] = useState([]);
   const navigate = useNavigate();
-  const { user } = useAuth();
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
 
   const handleClick = () => {
